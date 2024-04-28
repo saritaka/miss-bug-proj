@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "abc123",
+    "title": "Cannot save a Car",
+    "severity": 4,
+    "description": "press on the save button and an error is recieved",
+    "createdAt": 1542107359454
+  },
+  {
+    "_id": "d11",
+    "title": "Wrong car display",
+    "severity": 2,
+    "description": "Audi instead of the current car",
+    "createdAt": 123456789456123
+  },
+  {
+    "_id": "a2244",
+    "title": "Typo",
+    "severity": 1,
+    "description": "Auci instead of the current Auri",
+    "createdAt": 111111111111111
+  },
+  {
+    "_id": "yfZO",
+    "title": "Can't select car",
+    "severity": 5,
+    "description": "selected car is not highlighted",
+    "createdAt": 1714337991172
+  }
+]
