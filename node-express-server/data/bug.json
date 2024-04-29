@@ -2,8 +2,8 @@
   {
     "_id": "abc123",
     "title": "Cannot save a Car",
-    "severity": 4,
-    "description": "press on the save button and an error is recieved",
+    "severity": 3,
+    "description": "Save button doesn't work",
     "createdAt": 1542107359454
   },
   {
@@ -14,10 +14,17 @@
     "createdAt": 111111111111111
   },
   {
-    "_id": "yfZO",
-    "title": "Can't select car",
-    "severity": 3,
-    "description": "selected car is not highlighted",
-    "createdAt": 1714337991172
+    "_id": "d11",
+    "title": "Wrong car display",
+    "severity": 2,
+    "description": "Ausi instaed if fiac",
+    "createdAt": 123456789456123
+  },
+  {
+    "_id": "5s1g",
+    "title": "Car details",
+    "severity": 5,
+    "description": "Car details are not shown",
+    "createdAt": 1714394351685
   }
 ]
