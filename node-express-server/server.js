@@ -22,7 +22,8 @@ app.use(express.static("public"));
 app.use(cors(corsOptions));
 app.use(cookieParser());
 
-app.listen(3030, () => console.log("Server ready at port 3030"));
+const port = process.env.PORT || 3030;
+app.listen(port, () => console.log(`Server ready at port ${port}`));
 
 app.get("/", (req, res) => res.send("Hello there"));
 
