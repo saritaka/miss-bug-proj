@@ -1,15 +1,27 @@
 import { bugService } from "../services/bug.service.js";
 import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service.js";
 import { BugList } from "../cmps/BugList.jsx";
+import { BugFilter } from "../cmps/BugFilter.jsx";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 export function BugIndex() {
   const [bugs, setBugs] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const defaultFilter = bugService.getFilterFromSearchParams(searchParams);
+  const [filterBy, setFilterBy] = useState(defaultFilter);
 
   useEffect(() => {
-    loadBugs();
-  }, []);
+    setSearchParams(filterBy);
+    bugService
+      .query(filterBy)
+      .then((bugs) => setBugs(bugs))
+      .catch((err) => {
+        console.error("err:", err);
+      });
+    // loadBugs();
+  }, [filterBy]);
 
   async function loadBugs() {
     const bugs = await bugService.query();
@@ -66,7 +78,9 @@ export function BugIndex() {
   return (
     <main className="bug-index">
       <h3>Bugs App</h3>
+
       <main>
+        <BugFilter filterBy={filterBy} onSetFilterBy={setFilterBy} />
         <button className="add-btn" onClick={onAddBug}>
           Add Bug ⛐
         </button>

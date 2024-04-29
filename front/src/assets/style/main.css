@@ -20,15 +20,14 @@
 @import "cmps/BugList.css";
 @import "cmps/BugPreview.css";
 @import "cmps/BugDetails.css";
-
+@import "cmps/BugFilter.css";
 
 .main-app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-
 .main-app > main {
-    flex-grow: 1;
+  flex-grow: 1;
 }

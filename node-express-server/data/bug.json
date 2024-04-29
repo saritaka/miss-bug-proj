@@ -7,13 +7,6 @@
     "createdAt": 1542107359454
   },
   {
-    "_id": "d11",
-    "title": "Wrong car display",
-    "severity": 2,
-    "description": "Audi instead of the current car",
-    "createdAt": 123456789456123
-  },
-  {
     "_id": "a2244",
     "title": "Typo",
     "severity": 1,
@@ -23,7 +16,7 @@
   {
     "_id": "yfZO",
     "title": "Can't select car",
-    "severity": 5,
+    "severity": 3,
     "description": "selected car is not highlighted",
     "createdAt": 1714337991172
   }
