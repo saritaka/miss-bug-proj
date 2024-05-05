@@ -2,29 +2,32 @@
   {
     "_id": "abc123",
     "title": "Cannot save a Car",
-    "severity": 3,
+    "severity": 1,
     "description": "Save button doesn't work",
-    "createdAt": 1542107359454
+    "createdAt": 1542107359454,
+    "labels": "[critical, need-CR, dev-branch]"
   },
   {
     "_id": "a2244",
     "title": "Typo",
     "severity": 1,
     "description": "Auci instead of the current Auri",
-    "createdAt": 111111111111111
-  },
-  {
-    "_id": "d11",
-    "title": "Wrong car display",
-    "severity": 2,
-    "description": "Ausi instaed if fiac",
-    "createdAt": 123456789456123
+    "createdAt": 111111111111111,
+    "labels": "[critical, need-CR, dev-branch]"
   },
   {
     "_id": "5s1g",
     "title": "Car details",
-    "severity": 5,
+    "severity": 6,
     "description": "Car details are not shown",
-    "createdAt": 1714394351685
+    "createdAt": 1714394351685,
+    "labels": "[critical, need-CR, dev-branch]"
+  },
+  {
+    "title": "test",
+    "severity": 30,
+    "description": "fjdjfslfjdsl",
+    "_id": "6le2",
+    "createdAt": 1714938819934
   }
 ]

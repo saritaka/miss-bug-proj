@@ -19,19 +19,17 @@ export const bugService = {
 async function query(filterBy = {}) {
   let { data: bugs } = await axios.get(BASE_URL);
 
-  if (filterBy.txt) {
-    // const regExp = new RegExp(filterBy.txt, "i");
-    // bugs = bugs.filter((bug) => regExp.test(bug.title));
-    console.log("filterby,txt", filterBy.txt);
-    bugs = bugs.filter((bug) =>
-      bug.title.toLowerCase().includes(filterBy.txt.toLowerCase())
-    );
-  }
+  // if (filterBy.txt) {
+  //   console.log("filterby,txt", filterBy.txt);
+  //   bugs = bugs.filter((bug) =>
+  //     bug.title.toLowerCase().includes(filterBy.txt.toLowerCase())
+  //   );
+  // }
 
-  if (filterBy.severity) {
-    bugs = bugs.filter((bug) => bug.severity >= filterBy.severity);
-  }
-  console.log("bugs", bugs);
+  // if (filterBy.severity) {
+  //   bugs = bugs.filter((bug) => bug.severity >= filterBy.severity);
+  // }
+  // console.log("bugs", bugs);
   return bugs;
 }
 
@@ -41,14 +39,19 @@ async function getById(bugId) {
 }
 
 async function remove(bugId) {
-  return await axios.get(BASE_URL + bugId + "/remove");
+  return await axios.delete(BASE_URL + bugId);
 }
 
 async function save(bug) {
-  const queryParams = `?_id=${bug._id || ""}&title=${bug.title}&severity=${
-    bug.severity
-  }&description=${bug.description}`;
-  const { data: savedCar } = await axios.get(BASE_URL + "save/" + queryParams);
+  // const queryParams = `?_id=${bug._id || ""}&title=${bug.title}&severity=${
+  //   bug.severity
+  // }&description=${bug.description}`;
+  // const { data: savedCar } = await axios.get(BASE_URL + "save/" + queryParams);
+  const method = bug._id ? "put" : "post";
+  const { data: savedCar } = await axios[method](
+    BASE_URL + (bug._id || ""),
+    bug
+  );
   return savedCar;
 }
 

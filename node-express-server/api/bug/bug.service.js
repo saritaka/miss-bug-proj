@@ -1,5 +1,5 @@
 import fs from "fs";
-import { utilService } from "./util.service.js";
+import { utilService } from "../../Services/util.service.js";
 
 const bugs = utilService.readJsonFile("data/bug.json");
 

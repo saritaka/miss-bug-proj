@@ -30,7 +30,13 @@ export function BugDetails() {
       <p>
         Severity: <span>{bug.severity}</span>
       </p>
-      <h5>{bug.description}</h5>
+      <p>
+        Description: <span>{bug.description}</span>
+      </p>
+      <p>
+        Labels: <span>{bug.labels}</span>
+      </p>
+      <br />
       <Link to="/bug">Back to List</Link>
     </div>
   );

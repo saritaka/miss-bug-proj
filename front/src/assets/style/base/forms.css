@@ -13,7 +13,8 @@ button:hover {
   transition: 0.3s;
 }
 
-input:focus {
+input:focus,
+select:focus {
   background-color: var(--clr1bg);
   transition: background-color 1s;
 }
