@@ -1,8 +1,10 @@
 import { bugService } from "./bug.service.js";
 
 export async function getBugs(req, res) {
+  const { txt, severity } = req.query;
+  const filterBy = { txt, severity: +severity };
   try {
-    const bugs = await bugService.query();
+    const bugs = await bugService.query(filterBy);
     res.send(bugs);
   } catch (error) {
     loggerService.error(`couldn't get bug`, error);

@@ -1,6 +1,7 @@
 import fs from "fs";
 import { utilService } from "../../Services/util.service.js";
 
+const PAGE_SIZE = 2;
 const bugs = utilService.readJsonFile("data/bug.json");
 
 export const bugService = {
@@ -10,9 +11,29 @@ export const bugService = {
   save,
 };
 
-async function query() {
+async function query(filterBy = {}) {
+  let filteredBugs = [...bugs];
+
   try {
-    return bugs;
+    if (filterBy.txt) {
+      console.log("filterby.txt", filterBy.txt);
+      filteredBugs = filteredBugs.filter((bug) =>
+        bug.title.toLowerCase().includes(filterBy.txt.toLowerCase())
+      );
+    }
+
+    if (filterBy.severity) {
+      filteredBugs = filteredBugs.filter(
+        (bug) => bug.severity >= filterBy.severity
+      );
+    }
+
+    if (filterBy.pageIdx !== undefined) {
+      const startIdx = filterBy.pageIdx * PAGE_SIZE;
+      filteredCars = filteredCars.slice(startIdx, startIdx + PAGE_SIZE);
+    }
+    // console.log("bugs", bugs);
+    return filteredBugs;
   } catch (error) {
     throw error;
   }
