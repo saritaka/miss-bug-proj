@@ -25,7 +25,7 @@ app.use(express.json());
 import { bugRoutes } from "./api/bug/bug.routes.js";
 app.use("/api/bug", bugRoutes);
 
-app.get("/", (req, res) => res.send("Hello there"));
+// app.get("/", (req, res) => res.send("Hello there"));
 
 app.get("/api/logs", async (req, res) => {
   res.sendFile(process.cwd() + "/logs/backend.log");
