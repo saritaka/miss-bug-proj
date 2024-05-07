@@ -11,7 +11,8 @@ export const bugService = {
   save,
 };
 
-async function query(filterBy = {}, sortBy = {}) {
+// async function query(filterBy = {}, sortBy = {}) {
+async function query(filterBy = {}) {
   let filteredBugs = [...bugs];
 
   try {
@@ -28,19 +29,19 @@ async function query(filterBy = {}, sortBy = {}) {
       );
     }
 
-    if (sortBy.title) {
-      filteredBugs.sort((a, b) => {
-        const nameA = a.title.toUpperCase();
-        const nameB = b.title.toUpperCase();
-        if (nameA < nameB) {
-          return -1;
-        }
-        if (nameA > nameB) {
-          return 1;
-        }
-        return 0;
-      });
-    }
+    // if (sortBy.title) {
+    //   filteredBugs.sort((a, b) => {
+    //     const nameA = a.title.toUpperCase();
+    //     const nameB = b.title.toUpperCase();
+    //     if (nameA < nameB) {
+    //       return -1;
+    //     }
+    //     if (nameA > nameB) {
+    //       return 1;
+    //     }
+    //     return 0;
+    //   });
+    // }
 
     if (filterBy.pageIdx !== undefined) {
       const startIdx = filterBy.pageIdx * PAGE_SIZE;
