@@ -13,7 +13,7 @@
     "severity": 3,
     "description": "Save button doesn't work",
     "createdAt": 1542107359454,
-    "labels": ["critical", "need-CR", "dev-branch"]
+    "labels": ["critical"]
   },
   {
     "_id": "a2244",
@@ -21,7 +21,7 @@
     "severity": 1,
     "description": "Auci instead of the current Auri",
     "createdAt": 111111111111111,
-    "labels": ["critical", "need-CR"]
+    "labels": ["need-CR"]
   },
   {
     "_id": "5s1g",

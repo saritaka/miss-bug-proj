@@ -1,7 +1,8 @@
 import fs from "fs";
 import { utilService } from "../../Services/util.service.js";
 
-const PAGE_SIZE = 2;
+// const PAGE_SIZE = 2;
+const PAGE_SIZE = 20;
 const bugs = utilService.readJsonFile("data/bug.json");
 
 export const bugService = {
@@ -11,7 +12,6 @@ export const bugService = {
   save,
 };
 
-// async function query(filterBy = {}, sortBy = {}) {
 async function query(filterBy = {}) {
   let filteredBugs = [...bugs];
 
@@ -26,6 +26,13 @@ async function query(filterBy = {}) {
     if (filterBy.severity) {
       filteredBugs = filteredBugs.filter(
         (bug) => bug.severity >= filterBy.severity
+      );
+    }
+
+    if (filterBy.label) {
+      console.log("filterby.label", filterBy.label);
+      filteredBugs = filteredBugs.filter((bug) =>
+        bug.labels.includes(filterBy.label)
       );
     }
 

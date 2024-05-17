@@ -2,13 +2,14 @@ import { bugService } from "./bug.service.js";
 import { loggerService } from "../../Services/logger.service.js";
 
 export async function getBugs(req, res) {
-  const { txt, severity, pageIdx, sortBy, sortDir } = req.query;
+  const { txt, severity, pageIdx, sortBy, sortDir, label } = req.query;
   const filterBy = {
     txt,
     severity: +severity,
     pageIdx,
     sortBy,
     sortDir: +sortDir,
+    label,
   };
   // console.log(filterBy);
   try {
