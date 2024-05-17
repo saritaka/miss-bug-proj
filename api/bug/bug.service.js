@@ -29,19 +29,21 @@ async function query(filterBy = {}) {
       );
     }
 
-    // if (sortBy.title) {
-    //   filteredBugs.sort((a, b) => {
-    //     const nameA = a.title.toUpperCase();
-    //     const nameB = b.title.toUpperCase();
-    //     if (nameA < nameB) {
-    //       return -1;
-    //     }
-    //     if (nameA > nameB) {
-    //       return 1;
-    //     }
-    //     return 0;
-    //   });
-    // }
+    if (filterBy.sortBy) {
+      if (filterBy.sortBy === "title") {
+        filteredBugs.sort((a, b) => a.title.localeCompare(b.title));
+      }
+      if (filterBy.sortBy === "severity") {
+        filteredBugs.sort((a, b) => a.severity - b.severity);
+      }
+      if (filterBy.sortBy === "createdAt") {
+        if (filterBy.sortDir === -1) {
+          filteredBugs.sort((a, b) => b.createdAt - a.createdAt);
+        } else {
+          filteredBugs.sort((a, b) => a.createdAt - b.createdAt);
+        }
+      }
+    }
 
     if (filterBy.pageIdx !== undefined) {
       const startIdx = filterBy.pageIdx * PAGE_SIZE;
@@ -79,7 +81,7 @@ async function save(bugToSave) {
   try {
     if (bugToSave._id) {
       const ind = bugs.findIndex((bug) => bug._id === bugToSave._id);
-      if (ind < 0) throw `can't find bug ID${bugToSave._id}`;
+      if (ind < 0) throw `can't find bug ID ${bugToSave._id}`;
       bugs[ind]._id = bugToSave._id;
       bugs[ind].title = bugToSave.title;
       bugs[ind].severity = bugToSave.severity;
@@ -100,7 +102,7 @@ async function save(bugToSave) {
 
 function _saveBugsToFile(path = "./data/bug.json") {
   return new Promise((resolve, reject) => {
-    const data = JSON.stringify(bugs, null, 2);
+    const data = JSON.stringify(bugs, null, 4);
     // const data = JSON.stringify(bugs);
     console.log("data:", data);
     fs.writeFile(path, data, (err) => {

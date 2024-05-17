@@ -5,7 +5,7 @@
     "severity": 3,
     "description": "Save button doesn't work",
     "createdAt": 1542107359454,
-    "labels": "['critical', 'need-CR', 'dev-branch']"
+    "labels": ["critical", "need-CR", "dev-branch"]
   },
   {
     "_id": "a2244",
@@ -13,7 +13,7 @@
     "severity": 1,
     "description": "Auci instead of the current Auri",
     "createdAt": 111111111111111,
-    "labels": "['critical', 'need-CR', 'dev-branch']"
+    "labels": ["critical", "need-CR", "dev-branch"]
   },
   {
     "_id": "d11",
@@ -21,7 +21,7 @@
     "severity": 2,
     "description": "Ausi instaed if fiac",
     "createdAt": 123456789456123,
-    "labels": "['critical', 'need-CR', 'dev-branch']"
+    "labels": ["critical", "need-CR", "dev-branch"]
   },
   {
     "_id": "5s1g",
@@ -29,6 +29,6 @@
     "severity": 5,
     "description": "Car details are not shown",
     "createdAt": 1714394351685,
-    "labels": "['critical', 'need-CR', 'dev-branch']"
+    "labels": ["critical", "need-CR", "dev-branch"]
   }
 ]

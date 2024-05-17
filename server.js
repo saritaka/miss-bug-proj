@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
-// import { bugService } from "./Services/bug.service.js";
 import { loggerService } from "./Services/logger.service.js";
 
 const app = express();
@@ -25,11 +24,16 @@ app.use(express.json());
 import { bugRoutes } from "./api/bug/bug.routes.js";
 app.use("/api/bug", bugRoutes);
 
-// app.get("/", (req, res) => res.send("Hello there"));
+app.get("/", (req, res) => res.send("Hello there"));
 
 app.get("/api/logs", async (req, res) => {
   res.sendFile(process.cwd() + "/logs/backend.log");
 });
 
+app.get("/**", (req, res) => {
+  res.sendFile(path.resolve("public/index.html"));
+});
+
 const port = process.env.PORT || 3030;
-app.listen(port, () => console.log(`Server ready at port ${port}`));
+// app.listen(port, () => console.log(`Server ready at port ${port}`));
+app.listen(port, () => loggerService.info(`Server ready at port ${port}`));
