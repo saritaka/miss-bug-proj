@@ -1,19 +1,11 @@
 [
   {
-    "_id": "d11",
-    "title": "Wrong car display",
-    "severity": 2,
-    "description": "Ausi instaed if fiac",
-    "createdAt": 123456789456123,
-    "labels": ["critical", "need-CR", "dev-branch"]
-  },
-  {
     "_id": "abc123",
     "title": "Cannot save a Car",
     "severity": 3,
     "description": "Save button doesn't work",
     "createdAt": 1542107359454,
-    "labels": ["critical"]
+    "labels": ["critical", "need-CR", "dev-branch"]
   },
   {
     "_id": "a2244",
@@ -21,15 +13,16 @@
     "severity": 1,
     "description": "Auci instead of the current Auri",
     "createdAt": 111111111111111,
-    "labels": ["need-CR"]
+    "labels": ["critical"]
   },
+
   {
     "_id": "5s1g",
     "title": "Car details",
     "severity": 5,
     "description": "Car details are not shown",
     "createdAt": 1714394351685,
-    "labels": ["critical"]
+    "labels": ["need-CR"]
   },
   {
     "_id": "2222",
@@ -38,5 +31,13 @@
     "description": "Each car is shown twice",
     "createdAt": 1714394351685,
     "labels": []
+  },
+  {
+    "_id": "d11",
+    "title": "Wrong car display",
+    "severity": 2,
+    "description": "Ausi instaed if fiac",
+    "createdAt": 123456789456123,
+    "labels": ["critical", "need-CR", "dev-branch"]
   }
 ]

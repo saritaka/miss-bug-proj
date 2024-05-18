@@ -93,11 +93,13 @@ async function save(bugToSave) {
       bugs[ind].title = bugToSave.title;
       bugs[ind].severity = bugToSave.severity;
       bugs[ind].description = bugToSave.description;
+      bugs[ind].labels = bugToSave.labels;
     } else {
       console.log("in else:", bugToSave);
       bugToSave._id = utilService.makeId();
       // console.log("the created id:", bugToSave._id);
       bugToSave.createdAt = +new Date();
+      bugToSave.labels = [];
       bugs.push(bugToSave);
     }
     _saveBugsToFile();

@@ -1,0 +1,37 @@
+[
+    {
+        "_id": "u101",
+        "fullname": "Muki Ja",
+        "username": "muki",
+        "password": "muki1234",
+        "score": 5
+    },
+    {
+        "_id": "u200",
+        "fullname": "Tal",
+        "username": "Tali",
+        "password": "tal1234",
+        "score": 200
+    },
+    {
+        "_id": "u400",
+        "fullname": "Bar",
+        "username": "Bar1",
+        "password": "bar1234",
+        "score": 400
+    },
+    {
+        "fullname": "Uri",
+        "score": 3,
+        "username": "Uri122",
+        "password": "pass11",
+        "_id": "qcqs"
+    },
+    {
+        "fullname": "tester",
+        "score": 800,
+        "username": "test2000",
+        "password": "qawsed1",
+        "_id": "tv1T"
+    }
+]

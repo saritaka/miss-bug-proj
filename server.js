@@ -24,6 +24,9 @@ app.use(express.json());
 import { bugRoutes } from "./api/bug/bug.routes.js";
 app.use("/api/bug", bugRoutes);
 
+import { userRoutes } from "./api/user/user.routes.js";
+app.use("/api/user", userRoutes);
+
 app.get("/", (req, res) => res.send("Hello there"));
 
 app.get("/api/logs", async (req, res) => {
